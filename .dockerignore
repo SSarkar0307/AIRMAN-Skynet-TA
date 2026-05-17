@@ -1,0 +1,12 @@
+.git
+.pytest_cache
+__pycache__
+*.pyc
+*.db
+airman.db
+smoke.db
+smoke2.db
+.venv
+venv
+env
+

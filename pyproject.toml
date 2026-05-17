@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "airman-skynet-backend"
+version = "0.1.0"
+description = "Aviation operations backend for the Skynet flight school assessment"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.136.1",
+  "uvicorn>=0.47.0",
+  "sqlalchemy>=2.0.49",
+  "alembic>=1.18.4",
+  "psycopg[binary]>=3.2.4",
+  "python-jose[cryptography]>=3.5.0",
+  "passlib[bcrypt]>=1.7.4",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+exclude = ["tests*", "docs*", "migrations*"]
